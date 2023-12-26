@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "whiteChocolateMochaFrappucchino.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "whiteChocolateMochaFrappucchino 1.jpeg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "whiteChocolateMochaFrappucchino 2.jpeg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
