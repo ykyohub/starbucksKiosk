@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1457741D2B3AADC200986015 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1457741C2B3AADC200986015 /* DataModel.swift */; };
 		C4DA5C882B3AA972005E5DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA5C872B3AA972005E5DC4 /* AppDelegate.swift */; };
 		C4DA5C8A2B3AA972005E5DC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA5C892B3AA972005E5DC4 /* SceneDelegate.swift */; };
 		C4DA5C8C2B3AA972005E5DC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA5C8B2B3AA972005E5DC4 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1457741C2B3AADC200986015 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		C4DA5C842B3AA972005E5DC4 /* starbucksKiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = starbucksKiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DA5C872B3AA972005E5DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4DA5C892B3AA972005E5DC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				C4DA5C872B3AA972005E5DC4 /* AppDelegate.swift */,
 				C4DA5C892B3AA972005E5DC4 /* SceneDelegate.swift */,
 				C4DA5C8B2B3AA972005E5DC4 /* ViewController.swift */,
+				1457741C2B3AADC200986015 /* DataModel.swift */,
 				C4DA5C8D2B3AA972005E5DC4 /* Main.storyboard */,
 				C4DA5C902B3AA974005E5DC4 /* Assets.xcassets */,
 				C4DA5C922B3AA974005E5DC4 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4DA5C8C2B3AA972005E5DC4 /* ViewController.swift in Sources */,
+				1457741D2B3AADC200986015 /* DataModel.swift in Sources */,
 				C4DA5C882B3AA972005E5DC4 /* AppDelegate.swift in Sources */,
 				C4DA5C8A2B3AA972005E5DC4 /* SceneDelegate.swift in Sources */,
 			);
