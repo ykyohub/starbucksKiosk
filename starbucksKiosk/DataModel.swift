@@ -20,6 +20,7 @@ class Order {
     lazy var totalPrice: Int = 0
     
     func calculateTotalPrice() {
+        totalPrice = 0
         for `each` in self.cart {
             self.totalPrice += `each`.price * `each`.number
         }
