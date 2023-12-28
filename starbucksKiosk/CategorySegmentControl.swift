@@ -7,14 +7,8 @@
 
 import UIKit
 
-class CategorySegmentControl: UISegmentedControl {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
-}
+//class CategorySegmentControl: UISegmentedControl {
+//
+//    self.addTarget(self, action: #Selector(handleSegmentChange), for: .valueChanged)
+//
+//}

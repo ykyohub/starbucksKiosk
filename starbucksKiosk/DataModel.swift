@@ -16,15 +16,11 @@ struct Menu {
 }
 
 class Order {
-    var menu: [Menu] // 메뉴와 메뉴 갯수
+    var cart: [Menu] = [] // 메뉴와 메뉴 갯수
     lazy var totalPrice: Int = 0
     
-    init(menu: [Menu], totalPrice: Int) {
-        self.menu = menu
-    }
-    
     func calculateTotalPrice() {
-        for `each` in self.menu {
+        for `each` in self.cart {
             self.totalPrice += `each`.price * `each`.number
         }
     }
