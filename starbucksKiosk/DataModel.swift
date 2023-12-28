@@ -5,8 +5,8 @@
 //  Created by 영현 on 12/26/23.
 //
 
-import Foundation
 import UIKit
+
 
 struct Menu {
     let name: String
@@ -15,17 +15,21 @@ struct Menu {
     var number: Int
 }
 
+
 class Order {
     var cart: [Menu] = [] // 메뉴와 메뉴 갯수
     lazy var totalPrice: Int = 0
     
     func calculateTotalPrice() {
+
         totalPrice = 0
+
         for `each` in self.cart {
             self.totalPrice += `each`.price * `each`.number
         }
     }
 }
+
 
 extension Menu {
   static var blended: [Menu] = [
@@ -81,4 +85,5 @@ extension Menu {
     Menu(name: "시그니처 더 블랙 콜드 브루", image: "coldBrew.signatureTheBlackColdBrew", price: 6500, number: 1),
     Menu(name: "바닐라 크림 콜드 브루", image: "coldBrew.vanillaCreamColdBrew", price: 5800, number: 1),
     Menu(name: "별다방 우유광택 콜드 브루", image: "coldBrew.yeosuShiningHazelnutColdBrew", price: 6500, number: 1)]
+
 }

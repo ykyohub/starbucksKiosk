@@ -5,7 +5,6 @@
 //  Created by 영현 on 12/27/23.
 //
 
-import Foundation
 import UIKit
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -16,6 +15,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = OrderTableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath) as! OrderTableViewCell
         
         cell.setCell(customer.cart[indexPath.row])
@@ -26,6 +26,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self?.OrderTableView.deleteRows(at: [indexPath], with: .automatic)
             self?.OrderTableView.reloadData()
         }
+
         
         return cell
     }

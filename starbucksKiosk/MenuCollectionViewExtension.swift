@@ -26,11 +26,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let alert = UIAlertController(title: "주문 추가", message: "장바구니에 넣으시겠습니까?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "추가", style: .default) { _ in
             self.customer.cart.append(self.collectionsToDisplay[indexPath.row])
+
             self.customer.calculateTotalPrice()
             
             print(self.customer.cart)
             print(self.customer.totalPrice)
             self.OrderTableView.reloadData()
+
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(okAction)
