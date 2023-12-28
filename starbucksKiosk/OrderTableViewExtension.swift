@@ -8,13 +8,28 @@
 import UIKit
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return customer.cart.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = OrderTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+        let cell = OrderTableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath) as! OrderTableViewCell
+        
+        cell.setCell(customer.cart[indexPath.row])
+        
+        cell.orderDeleteButton = { [weak self] in
+            print(indexPath.row)
+            self?.customer.cart.remove(at: indexPath.row)
+            self?.OrderTableView.deleteRows(at: [indexPath], with: .automatic)
+            self?.OrderTableView.reloadData()
+        }
+
         
         return cell
     }
 }
+
+
