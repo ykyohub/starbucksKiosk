@@ -9,12 +9,24 @@ import Foundation
 import UIKit
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return cart.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = OrderTableView.dequeueReusableCell(withIdentifier: "orderTableViewCell", for: indexPath)
+        let cell = OrderTableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath) as! OrderTableViewCell
+        
+        cell.setCell(cart[indexPath.row])
+        
+        cell.orderDeleteButton = { [weak self] in
+            print(indexPath.row)
+            self?.cart.remove(at: indexPath.row)
+            self?.OrderTableView.deleteRows(at: [indexPath], with: .automatic)
+            self?.OrderTableView.reloadData()
+        }
+        
         return cell
     }
 }

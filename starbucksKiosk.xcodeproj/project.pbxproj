@@ -72,15 +72,15 @@
 				C4DA5C892B3AA972005E5DC4 /* SceneDelegate.swift */,
 				1457741C2B3AADC200986015 /* DataModel.swift */,
 				C4DA5C8B2B3AA972005E5DC4 /* ViewController.swift */,
-				144279992B3C10EB006F67D6 /* OrderTableViewExtension.swift */,
 				1442799B2B3C1147006F67D6 /* MenuCollectionViewExtension.swift */,
 				144279952B3C0F4E006F67D6 /* CategorySegmentControl.swift */,
-				144279A52B3D09E9006F67D6 /* OrderTableViewCell.swift */,
 				144279A32B3D09D6006F67D6 /* MenuCollectionViewCell.swift */,
 				C4DA5C8D2B3AA972005E5DC4 /* Main.storyboard */,
 				C4DA5C902B3AA974005E5DC4 /* Assets.xcassets */,
 				C4DA5C922B3AA974005E5DC4 /* LaunchScreen.storyboard */,
 				C4DA5C952B3AA974005E5DC4 /* Info.plist */,
+				144279992B3C10EB006F67D6 /* OrderTableViewExtension.swift */,
+				144279A52B3D09E9006F67D6 /* OrderTableViewCell.swift */,
 			);
 			path = starbucksKiosk;
 			sourceTree = "<group>";

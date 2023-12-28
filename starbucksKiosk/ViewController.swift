@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    var cart:[Menu] = [Menu.blended[0], Menu.blended[1]]
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var OrderTableView: UITableView!
     @IBOutlet weak var payButton: UIButton!
