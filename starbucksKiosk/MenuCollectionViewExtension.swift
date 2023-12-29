@@ -9,7 +9,6 @@ import UIKit
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionsToDisplay.count
     }
@@ -47,18 +46,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 self.totalPriceLabel.text = String(self.customer.totalPrice ) + " 원"
                 self.totalQuantityLabel.text = String(self.customer.totalQuantity ) + " 개"
                 
-                print(self.customer.cart)
-                print(self.customer.totalPrice)
                 self.OrderTableView.reloadData()
             }
         }
+        
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
         present(alert, animated: true)
-        
-        
     }
-    
 }

@@ -28,7 +28,6 @@ class ViewController: UIViewController {
     
     // MARK: func selectionValueChanged: SegmentedControl 변경에 따라서 화면에 비출 Menu 배열을 바꿔줌
     @IBAction func selectionValueChanged(_ sender: Any) {
-        print(CategorySelection.selectedSegmentIndex)
         switch CategorySelection.selectedSegmentIndex {
         case 1:
             collectionsToDisplay = Menu.coldBrew
@@ -53,15 +52,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        let message = "\(customer.totalPrice) 원을 결제하시겠습니까?"
-        let alert = UIAlertController(title: "결제 확인", message: message, preferredStyle: .alert)
-        let actionPay = UIAlertAction(title: "결제", style: .default) { [weak self] _ in
-            self?.presentPaymentOptions()
+        if customer.totalPrice == 0 {
+            let alert = UIAlertController(title: nil , message: "결제할 항목이 없습니다.", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "확인", style: .default)
+                  alert.addAction(action)
+                  present(alert, animated: true, completion: nil)
+        }else {
+            let message = "\(customer.totalPrice) 원을 결제하시겠습니까?"
+            let alert = UIAlertController(title: "결제 확인", message: message, preferredStyle: .alert)
+            let actionPay = UIAlertAction(title: "결제", style: .default) { [weak self] _ in
+                self?.presentPaymentOptions()
+            }
+            let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addAction(actionPay)
+            alert.addAction(actionCancel)
+            present(alert, animated: true, completion: nil)
         }
-        let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        alert.addAction(actionPay)
-        alert.addAction(actionCancel)
-        present(alert, animated: true, completion: nil)
     }
     func presentPaymentOptions() {
        let paymentActionSheet = UIAlertController(title: "어떤 결제 수단으로 결제하시겠습니까?", message: nil, preferredStyle: .actionSheet)
@@ -95,16 +101,23 @@ class ViewController: UIViewController {
         present(completionAlert, animated: true, completion: nil)
     }
     @IBAction func clearOrderTapped(_ sender: UIButton) {
-        let confirmAlert = UIAlertController(title: "전체 삭제", message: "전체 항목을 삭제하시겠습니까?", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "예", style: .destructive) { [weak self] _ in
-            self?.customer.clearOrder()
-            self?.OrderTableView.reloadData()
-            self?.updateTotalDisplay()
+        if customer.totalPrice == 0 {
+            let alert = UIAlertController(title: nil , message: "취소할 항목이 없습니다.", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "확인", style: .default)
+                  alert.addAction(action)
+                  present(alert, animated: true, completion: nil)
+        }else {
+            let confirmAlert = UIAlertController(title: "전체 삭제", message: "전체 항목을 삭제하시겠습니까?", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "예", style: .destructive) { [weak self] _ in
+                self?.customer.clearOrder()
+                self?.OrderTableView.reloadData()
+                self?.updateTotalDisplay()
+            }
+            let cancelAction = UIAlertAction(title: "아니오", style: .cancel, handler: nil)
+            confirmAlert.addAction(confirmAction)
+            confirmAlert.addAction(cancelAction)
+            present(confirmAlert, animated: true, completion: nil)
         }
-        let cancelAction = UIAlertAction(title: "아니오", style: .cancel, handler: nil)
-        confirmAlert.addAction(confirmAction)
-        confirmAlert.addAction(cancelAction)
-        present(confirmAlert, animated: true, completion: nil)
     }
         // 총 가격과 총 수량을 화면에 업데이트하는 메서드
     func updateTotalDisplay() {

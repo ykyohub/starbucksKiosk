@@ -9,7 +9,6 @@ import UIKit
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return customer.cart.count
     }
