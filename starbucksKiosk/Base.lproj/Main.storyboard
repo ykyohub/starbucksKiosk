@@ -274,9 +274,10 @@
                         <outlet property="CategorySelection" destination="rU2-lI-8fJ" id="qlV-Em-LF3"/>
                         <outlet property="MenuCollectionView" destination="mfe-F6-yKJ" id="0Ym-ez-4Jb"/>
                         <outlet property="OrderTableView" destination="K6x-rA-YeG" id="40K-cA-77L"/>
-                        <outlet property="cancelButton" destination="iYh-Yt-bDK" id="dNe-6n-hBU"/>
                         <outlet property="mainTitle" destination="Pqw-KR-6eT" id="QHC-BP-rY1"/>
                         <outlet property="payButton" destination="iLo-X6-2PF" id="P26-GJ-0gT"/>
+                        <outlet property="totalPriceLabel" destination="sS3-ZS-O6Y" id="e2f-fD-vCp"/>
+                        <outlet property="totalQuantityLabel" destination="Lph-P0-tQA" id="dgo-D4-PA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0J-dw-HnI" sceneMemberID="firstResponder"/>

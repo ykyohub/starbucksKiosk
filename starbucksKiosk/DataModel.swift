@@ -24,7 +24,13 @@ class Order {
 
         for `each` in self.cart {
             self.totalPrice += `each`.price * `each`.number
+            
         }
+    }
+    
+    func clearOrder() {
+        cart.removeAll() // 'cart' 배열의 모든 항목을 지웁니다
+        calculateTotalPrice() // 총 가격을 다시 계산합니다
     }
 }
 
@@ -85,3 +91,4 @@ extension Menu {
     Menu(name: "별다방 우유광택 콜드 브루", image: "coldBrew.yeosuShiningHazelnutColdBrew", price: 6500, number: 1)]
 
 }
+
