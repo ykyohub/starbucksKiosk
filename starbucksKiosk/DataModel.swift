@@ -19,9 +19,7 @@ struct Menu {
 class Order {
     var cart: [Menu] = [] // 메뉴와 메뉴 갯수
     lazy var totalPrice: Int = 0
-    
     func calculateTotalPrice() {
-
         totalPrice = 0
 
         for `each` in self.cart {

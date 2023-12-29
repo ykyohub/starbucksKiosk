@@ -173,6 +173,9 @@
                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="전체취소"/>
+                                <connections>
+                                    <action selector="clearOrderTapped:" destination="lmc-Hb-v2F" eventType="touchUpInside" id="x2z-el-ffN"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" id="T2a-Dx-RXm">
                                 <rect key="frame" x="14" y="733" width="192" height="82"/>
