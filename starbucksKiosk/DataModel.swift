@@ -19,15 +19,30 @@ struct Menu {
 class Order {
     var cart: [Menu] = [] // 메뉴와 메뉴 갯수
     lazy var totalPrice: Int = 0
+    lazy var totalQuantity: Int = 0
     
-    func calculateTotalPrice() {
-
+    func calculateTotal() {
         totalPrice = 0
-
+        totalQuantity = 0
         for `each` in self.cart {
             self.totalPrice += `each`.price * `each`.number
+            self.totalQuantity += `each`.number
         }
+        print("장바구니: \(self.cart)")
+        print("전체 금액 : \(self.totalPrice)")
+        print("전체 갯수 : \(self.totalQuantity)")
     }
+    
+    func clearOrder() {
+        cart = []
+        totalPrice = 0
+        totalQuantity = 0
+        print("주문 목록을 모두 지웠읍니다요")
+    }
+    
+//    func orderAlreadyExistMenuInCart() {
+//        
+//    }
 }
 
 

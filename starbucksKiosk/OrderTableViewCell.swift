@@ -11,6 +11,7 @@ class OrderTableViewCell: UITableViewCell {
     
     var orderDeleteButton: (() -> ())?
     var menu: Menu?
+    var orderStepper: ((_ sender: Int) -> ())?
     
     @IBOutlet weak var orderTableViewStepper: UIStepper!
     @IBOutlet weak var orderTableViewProductLabel: UILabel!
@@ -18,12 +19,12 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var orderTableViewCountLabel: UILabel!
     @IBOutlet weak var orderTableViewImage: UIImageView!
     
-    
     @IBAction func orderTableViewStepper(_ sender: UIStepper) {
-        orderTableViewCountLabel.text = String(String(Int(round(sender.value))))
+        orderStepper?(Int(sender.value))
     }
     
     @IBAction func orderTableViewDeleteButton(_ sender: UIButton) {
+        orderTableViewStepper.value = 0
         orderDeleteButton?()
     }
     
