@@ -34,7 +34,7 @@ class OrderTableViewCell: UITableViewCell {
         menu = _menu
         
         self.orderTableViewProductLabel.text = _menu.name
-        self.orderTableViewPriceLabel.text = String(_menu.price)
+        self.orderTableViewPriceLabel.text = String(_menu.price) + " 원"
         self.orderTableViewCountLabel.text = String(_menu.number)
         self.orderTableViewImage.image = UIImage(named: _menu.image)
         
@@ -42,13 +42,9 @@ class OrderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }
