@@ -21,6 +21,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // 셀 그리기
         cell.setCell(customer.cart[indexPath.row])
         
+        //감소 버튼 동작
+        cell.decreaseButton = { [weak self] in
+            if self?.customer.cart[indexPath.row].number != 0 {
+                self?.customer.cart[indexPath.row].number -= 1
+            }
+            self?.OrderTableView.reloadData()
+            self?.customer.calculateTotal()
+            self?.totalPriceLabel.text = String(self?.customer.totalPrice ?? 0) + " 원"
+            self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0) + " 개"
+        }
+        
+        //증가 버튼 동작
+        cell.increaseButton = { [weak self] in
+            self?.customer.cart[indexPath.row].number += 1
+            self?.OrderTableView.reloadData()
+            self?.customer.calculateTotal()
+            self?.totalPriceLabel.text = String(self?.customer.totalPrice ?? 0) + " 원"
+            self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0) + " 개"
+        }
+        
         // 셀 내부에 쓰레기통 버튼 눌렀을 때 기능 정의
         cell.orderDeleteButton = { [weak self] in
             self?.customer.cart.remove(at: indexPath.row)
@@ -29,23 +49,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             // 총 주문 가격과 수량 계산해서 보여주는 코드
             self?.customer.calculateTotal()
-            self?.totalPriceLabel.text = String(self?.customer.totalPrice ?? 0) + "₩"
-            self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0) + "개"
-        }
-
-        // 셀 내부 스테퍼 눌렀을 때 기능 정의
-        cell.orderStepper = { [weak self] value in
-            self?.customer.cart[indexPath.row].number = value
-            self?.OrderTableView.reloadData()
-            
-            // 총 주문 가격과 수량 계산해서 보여주는 코드
-            self?.customer.calculateTotal()
-            self?.totalPriceLabel.text = String(self?.customer.totalPrice ?? 0) + "₩"
-            self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0) + "개"
+            self?.totalPriceLabel.text = String(self?.customer.totalPrice ?? 0) + " 원"
+            self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0) + " 개"
         }
         
         return cell
     }
 }
-
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		144279962B3C0F4E006F67D6 /* CategorySegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144279952B3C0F4E006F67D6 /* CategorySegmentControl.swift */; };
 		1442799A2B3C10EB006F67D6 /* OrderTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144279992B3C10EB006F67D6 /* OrderTableViewExtension.swift */; };
 		1442799C2B3C1147006F67D6 /* MenuCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442799B2B3C1147006F67D6 /* MenuCollectionViewExtension.swift */; };
 		144279A42B3D09D6006F67D6 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144279A32B3D09D6006F67D6 /* MenuCollectionViewCell.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		144279952B3C0F4E006F67D6 /* CategorySegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySegmentControl.swift; sourceTree = "<group>"; };
 		144279992B3C10EB006F67D6 /* OrderTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewExtension.swift; sourceTree = "<group>"; };
 		1442799B2B3C1147006F67D6 /* MenuCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewExtension.swift; sourceTree = "<group>"; };
 		144279A32B3D09D6006F67D6 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				1457741C2B3AADC200986015 /* DataModel.swift */,
 				C4DA5C8B2B3AA972005E5DC4 /* ViewController.swift */,
 				1442799B2B3C1147006F67D6 /* MenuCollectionViewExtension.swift */,
-				144279952B3C0F4E006F67D6 /* CategorySegmentControl.swift */,
 				144279A32B3D09D6006F67D6 /* MenuCollectionViewCell.swift */,
 				C4DA5C8D2B3AA972005E5DC4 /* Main.storyboard */,
 				C4DA5C902B3AA974005E5DC4 /* Assets.xcassets */,
@@ -156,7 +153,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144279962B3C0F4E006F67D6 /* CategorySegmentControl.swift in Sources */,
 				C4DA5C8C2B3AA972005E5DC4 /* ViewController.swift in Sources */,
 				1457741D2B3AADC200986015 /* DataModel.swift in Sources */,
 				144279A42B3D09D6006F67D6 /* MenuCollectionViewCell.swift in Sources */,
