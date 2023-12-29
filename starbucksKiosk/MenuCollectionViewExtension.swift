@@ -34,8 +34,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 
                 // 총 주문 가격과 수량 계산해서 보여주는 코드
                 self.customer.calculateTotal()
-                self.totalPriceLabel.text = String(self.customer.totalPrice ) + "₩"
-                self.totalQuantityLabel.text = String(self.customer.totalQuantity ) + "개"
+                self.totalPriceLabel.text = String(self.customer.totalPrice ) + " 원"
+                self.totalQuantityLabel.text = String(self.customer.totalQuantity ) + " 개"
                 
                 self.OrderTableView.reloadData()
                 self.reloadInputViews()
@@ -44,8 +44,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 
                 // 총 주문 가격과 수량 계산해서 보여주는 코드
                 self.customer.calculateTotal()
-                self.totalPriceLabel.text = String(self.customer.totalPrice ) + "₩"
-                self.totalQuantityLabel.text = String(self.customer.totalQuantity ) + "개"
+                self.totalPriceLabel.text = String(self.customer.totalPrice ) + " 원"
+                self.totalQuantityLabel.text = String(self.customer.totalQuantity ) + " 개"
                 
                 print(self.customer.cart)
                 print(self.customer.totalPrice)

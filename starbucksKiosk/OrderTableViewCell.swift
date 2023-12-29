@@ -10,25 +10,24 @@ import UIKit
 class OrderTableViewCell: UITableViewCell {
     
     var orderDeleteButton: (() -> ())?
+    var decreaseButton: (() -> ())?
+    var increaseButton: (() -> ())?
     var menu: Menu?
-    var orderStepper: ((_ sender: Int) -> ())?
     
-    @IBOutlet weak var orderTableViewStepper: UIStepper!
     @IBOutlet weak var orderTableViewProductLabel: UILabel!
     @IBOutlet weak var orderTableViewPriceLabel: UILabel!
     @IBOutlet weak var orderTableViewCountLabel: UILabel!
     @IBOutlet weak var orderTableViewImage: UIImageView!
     
-    @IBAction func orderTableViewStepper(_ sender: UIStepper) {
-
-        print("stepper sender value : ",Int(sender.value))
-
-        orderStepper?(Int(sender.value))
-    }
     
     @IBAction func orderTableViewDeleteButton(_ sender: UIButton) {
-        orderTableViewStepper.value = 0
         orderDeleteButton?()
+    }
+    @IBAction func orderTableViewDecreaseButton(_ sender: UIButton) {
+        decreaseButton?()
+    }
+    @IBAction func orderTableViewIncreaseButton(_ sender: UIButton) {
+        increaseButton?()
     }
     
     func setCell(_ _menu: Menu){
