@@ -19,6 +19,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         
         self.menuImage.image = UIImage(named: _menu.image)
         self.menuName.text = _menu.name
+        self.menuName.sizeToFit()
     }
 }
 
