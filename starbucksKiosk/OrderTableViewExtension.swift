@@ -44,8 +44,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0) + "개"
         }
         
+//        cell.setStepperValue = { [weak self] in
+//            return Int((self?.customer.cart[indexPath.row].number)!)
+//        }
+            
+        cell.orderStepper = { [weak self] value in
+            self?.customer.cart[indexPath.row].number = value
+            print("현재 테이블 뷰 셀 넘버 : ",self?.customer.cart[indexPath.row].number ?? 0)
+            
+            self?.OrderTableView.reloadData()
+            self?.customer.calculateTotal()
+            print("total price : ",self?.customer.totalPrice ?? 0)
+        }
+        
         return cell
     }
 }
-
 

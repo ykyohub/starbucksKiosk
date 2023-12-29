@@ -94,7 +94,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="363" height="70.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kQd-ou-uXv">
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" value="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kQd-ou-uXv">
                                                     <rect key="frame" x="242" y="19.000000000000004" width="94" height="32.333333333333343"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.55000000000000004" height="0.94999999999999996"/>
                                                     <connections>

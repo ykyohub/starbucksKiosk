@@ -20,6 +20,9 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var orderTableViewImage: UIImageView!
     
     @IBAction func orderTableViewStepper(_ sender: UIStepper) {
+
+        print("stepper sender value : ",Int(sender.value))
+
         orderStepper?(Int(sender.value))
     }
     

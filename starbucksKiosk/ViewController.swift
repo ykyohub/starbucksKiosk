@@ -9,7 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
     // MARK: 변수 선언부분
+
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var OrderTableView: UITableView!
     @IBOutlet weak var payButton: UIButton!

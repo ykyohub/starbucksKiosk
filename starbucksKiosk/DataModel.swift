@@ -21,9 +21,16 @@ class Order {
     lazy var totalPrice: Int = 0
     lazy var totalQuantity: Int = 0
     
+
+    func calculateTotalPrice() {
+        
+        totalPrice = 0
+        
+    }
     func calculateTotal() {
         totalPrice = 0
         totalQuantity = 0
+
         for `each` in self.cart {
             self.totalPrice += `each`.price * `each`.number
             self.totalQuantity += `each`.number
@@ -39,10 +46,6 @@ class Order {
         totalQuantity = 0
         print("주문 목록을 모두 지웠읍니다요")
     }
-    
-//    func orderAlreadyExistMenuInCart() {
-//        
-//    }
 }
 
 
