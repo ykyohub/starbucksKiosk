@@ -13,8 +13,9 @@ struct Menu {
     var number: Int
 }
 
+// MARK: 고객에 대한 정보를 담을 Order 클래스 선언
 class Order {
-    var cart: [Menu] = [] // 메뉴와 메뉴 갯수
+    var cart: [Menu] = []
     
     lazy var totalPrice: Int = 0
     lazy var totalQuantity: Int = 0
@@ -28,13 +29,16 @@ class Order {
             self.totalQuantity += `each`.number
         }
     }
+    
     func clearOrder() {
-        cart.removeAll() // 카트 배열의 모든 항목을 지웁니다
-        totalPrice = 0 // 총 가격을 0으로 리셋합니다
-        totalQuantity = 0 // 총 수량을 0으로 리셋합니다
+        cart.removeAll()
+        totalPrice = 0
+        totalQuantity = 0
     }
 }
 
+
+// MARK: 등록된 메뉴를 사용하기 쉽게 미리 선언해둠
 extension Menu {
     static var blended: [Menu] = [
         Menu(name: "북한산레몬얼그레이블렌디드", image: "blended.bukhansamLemonEarlGreyBlended", price: 9000, number: 1),

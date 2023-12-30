@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
 
-    // MARK: 변수 선언부분
+    // MARK: Variable
 
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var OrderTableView: UITableView!
@@ -21,12 +21,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalQuantityLabel: UILabel!
     
-    // CollectionViewCell에 할당할 데이터를 담는 배열 선언
     lazy var collectionsToDisplay: [Menu] = Menu.espresso
     
     var customer = Order()
     
-    // MARK: func selectionValueChanged: SegmentedControl 변경에 따라서 화면에 비출 Menu 배열을 바꿔줌
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        OrderTableView.delegate = self
+        OrderTableView.dataSource = self
+        MenuCollectionView.dataSource = self
+        MenuCollectionView.delegate = self
+    }
+    
+    // MARK: IBAction function
     @IBAction func selectionValueChanged(_ sender: Any) {
         switch CategorySelection.selectedSegmentIndex {
         case 1:
@@ -38,17 +46,7 @@ class ViewController: UIViewController {
         default:
             collectionsToDisplay = Menu.espresso
         }
-        // MenuCollectionview에 들어가는 데이터를 다시 로드
         MenuCollectionView.reloadData()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        OrderTableView.delegate = self
-        OrderTableView.dataSource = self
-        MenuCollectionView.dataSource = self
-        MenuCollectionView.delegate = self
     }
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
@@ -57,7 +55,7 @@ class ViewController: UIViewController {
                   let action = UIAlertAction(title: "확인", style: .default)
                   alert.addAction(action)
                   present(alert, animated: true, completion: nil)
-        }else {
+        } else {
             let message = "\(customer.totalPrice) 원을 결제하시겠습니까?"
             let alert = UIAlertController(title: "결제 확인", message: message, preferredStyle: .alert)
             let actionPay = UIAlertAction(title: "결제", style: .default) { [weak self] _ in
@@ -69,37 +67,7 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-    func presentPaymentOptions() {
-       let paymentActionSheet = UIAlertController(title: "어떤 결제 수단으로 결제하시겠습니까?", message: nil, preferredStyle: .actionSheet)
-       let cardPaymentAction = UIAlertAction(title: "카드결제", style: .default) { [weak self] _ in
-           self?.completeOrder()
-       }
-       let couponPaymentAction = UIAlertAction(title: "쿠폰결제", style: .default) { [weak self] _ in
-           self?.completeOrder()
-       }
-       let easyPaymentAction = UIAlertAction(title: "간편결제", style: .default) { [weak self] _ in
-           self?.completeOrder()
-       }
-       let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-       paymentActionSheet.addAction(cardPaymentAction)
-       paymentActionSheet.addAction(couponPaymentAction)
-       paymentActionSheet.addAction(easyPaymentAction)
-       paymentActionSheet.addAction(cancelAction)
-       present(paymentActionSheet, animated: true, completion: nil)
-    }
-    func completeOrder() {
-        let completionAlert = UIAlertController(title: nil, message: "주문이 완료되었습니다 :)", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
-            self?.customer.clearOrder()
-            // 총 주문 가격과 수량 계산해서 보여주는 코드
-            self?.customer.calculateTotal()
-            self?.totalPriceLabel.text = String(self?.customer.totalPrice ?? 0 ) + " 원"
-            self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0 ) + " 개"
-            self?.OrderTableView.reloadData()
-        }
-        completionAlert.addAction(okAction)
-        present(completionAlert, animated: true, completion: nil)
-    }
+    
     @IBAction func clearOrderTapped(_ sender: UIButton) {
         if customer.totalPrice == 0 {
             let alert = UIAlertController(title: nil , message: "취소할 항목이 없습니다.", preferredStyle: .alert)
@@ -119,7 +87,40 @@ class ViewController: UIViewController {
             present(confirmAlert, animated: true, completion: nil)
         }
     }
-        // 총 가격과 총 수량을 화면에 업데이트하는 메서드
+    
+    // MARK: function
+    func presentPaymentOptions() {
+       let paymentActionSheet = UIAlertController(title: "어떤 결제 수단으로 결제하시겠습니까?", message: nil, preferredStyle: .actionSheet)
+       let cardPaymentAction = UIAlertAction(title: "카드결제", style: .default) { [weak self] _ in
+           self?.completeOrder()
+       }
+       let couponPaymentAction = UIAlertAction(title: "쿠폰결제", style: .default) { [weak self] _ in
+           self?.completeOrder()
+       }
+       let easyPaymentAction = UIAlertAction(title: "간편결제", style: .default) { [weak self] _ in
+           self?.completeOrder()
+       }
+       let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+       paymentActionSheet.addAction(cardPaymentAction)
+       paymentActionSheet.addAction(couponPaymentAction)
+       paymentActionSheet.addAction(easyPaymentAction)
+       paymentActionSheet.addAction(cancelAction)
+       present(paymentActionSheet, animated: true, completion: nil)
+    }
+    
+    func completeOrder() {
+        let completionAlert = UIAlertController(title: nil, message: "주문이 완료되었습니다 :)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+            self?.customer.clearOrder()
+            self?.customer.calculateTotal()
+            self?.totalPriceLabel.text = String(self?.customer.totalPrice ?? 0 ) + " 원"
+            self?.totalQuantityLabel.text = String(self?.customer.totalQuantity ?? 0 ) + " 개"
+            self?.OrderTableView.reloadData()
+        }
+        completionAlert.addAction(okAction)
+        present(completionAlert, animated: true, completion: nil)
+    }
+    
     func updateTotalDisplay() {
         totalPriceLabel.text = "\(customer.totalPrice) 원"
         totalQuantityLabel.text = "\(customer.totalQuantity) 개"
