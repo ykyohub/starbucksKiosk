@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+// MARK: 메뉴 화면 CollectionViewCell 클래스 정의
 class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var menuImage: UIImageView!

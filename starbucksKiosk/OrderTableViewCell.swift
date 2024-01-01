@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+// MARK: 주문 내역 화면의 TableViewCell 클래스 정의
 class OrderTableViewCell: UITableViewCell {
     
     var orderDeleteButton: (() -> ())?
