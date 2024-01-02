@@ -5,10 +5,10 @@
 - [김영현](https://github.com/y0unghyun)   
   ----
   #### 카테고리 바
-  - 
-  - 
-  - 
-  - 
+  - `UISegmentedControl` 요소를 사용해 상단 메뉴 카테고리 바 구성
+  - 화면 중앙 `UICollectionView`에 적절한 메뉴를 전달하기 위해서 `collectionsToDisplay` 빈 배열 생성
+  - `UISegmentedControl`에 적힌 메뉴를 눌렀을 때 변화하는 `.selectedSegmentIndex`값을 사용해서 `collectionsToDisplay` 배열에 미리 선언된 적절한 메뉴 전달
+  - 메뉴 변경 시점에서 `UICollectionView.reloadData()` 진행하여 화면 중단에 적절한 메뉴를 보여줌
 
 - [김유경](https://github.com/kyk70009/Project)    
   ----
