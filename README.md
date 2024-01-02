@@ -6,17 +6,17 @@
   ----
   #### 카테고리 바
   - `UISegmentedControl` 요소를 사용해 상단 메뉴 카테고리 바 구성
-  - 화면 중앙 `UICollectionView`에 적절한 메뉴를 전달하기 위해서 `collectionsToDisplay` 빈 배열 생성
+  - 화면 중앙 `UICollectionView`에 적절한 메뉴를 전달하기 위해서 `collectionsToDisplay` 빈 배열 생성
   - `UISegmentedControl`에 적힌 메뉴를 눌렀을 때 변화하는 `.selectedSegmentIndex`값을 사용해서 `collectionsToDisplay` 배열에 미리 선언된 적절한 메뉴 전달
   - 메뉴 변경 시점에서 `UICollectionView.reloadData()` 진행하여 화면 중단에 적절한 메뉴를 보여줌
 
 - [김유경](https://github.com/kyk70009/Project)    
   ----
   #### 메뉴 화면
-  - 
-  - 
-  - 
-  - 
+  - 전달받은 데이터로 셀을 그리는 `UICollectionViewCell.setCell()` 메소드를 생성하여 셀을 구성함
+  - `collectionsToDisplay` 배열을 전달받아 `UICollectionView` 를 적절히 그려내어 사용자에게 표시해줌
+  - `CollectionViewCell`을 선택 시, Alert 창을 띄운 후에 정말로 장바구니에 해당 메뉴를 넣을 것인지 선택
+  - 사용자의 정보를 저장할 `Order` 객체에 선택한 메뉴를 저장할 수 있도록 데이터 전달
 <br/><br/>
 
 - [윤규호](https://github.com/ykyohub)
