@@ -22,9 +22,12 @@
 - [윤규호](https://github.com/ykyohub)
   ----
   #### 주문 내역 화면
-  - 
-  - 
-  - 
+  - 주문 내역 Table View & Table View Cell 구현, Collection View 에서 처리한 장바구니에 추가된 항목을 테이블 뷰에 출력.
+  - 장바구니에 담은 항목의 이름, 가격, 수량을 각각의 UILabel 에 setCell 메서드를 통해 테이블 뷰 셀 설정
+  - 수량 감소 및 증가 기능 UIButton 기능 구현. orderTableViewDecreaseButton & orderTableViewIncreaseButton 클로저를 통해 수량값 조절 후
+    전체 수량 및 전체 가격 값 초기화해서 stackView totalPrice, totalQuantity UILabel 업데이트
+  - 셀 삭제 기능 UIButton 기능 구현. orderTableViewDeleteButton 클로저를 통해 컨트롤.
+    버튼 클릭 시 셀 내부 값 삭제 & stackView 업데이트 & customer.cart 값 업데이트(장바구니)
 <br/><br/>
 
 - [김가빈](https://github.com/BINDUNGLIFE)   
