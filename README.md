@@ -30,7 +30,7 @@
 - [김가빈](https://github.com/BINDUNGLIFE)   
   ----
   #### 결제하기, 취소하기 
-  - 결제 버튼 (payButtonTapped) ///
+  - 결제 버튼 (payButtonTapped) <br>
     주문 금액(customer.totalPrice)이 0일 경우, "결제할 항목이 없습니다"라는 알림을 표시
     주문 금액이 0이 아니면, 사용자에게 결제할 금액을 보여주고 "결제/취소" 옵션을 제공하는 알림을 표시
   - 결제 옵션 제공(presentPaymentOptions)
